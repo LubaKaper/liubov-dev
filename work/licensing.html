@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Licensing dashboard | Liubov</title>
+<meta name="description" content="Case study: an operations dashboard for a four-person New York liquor licensing office.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800;900&family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="page-case">
+<div class="dot" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <a class="home" href="../">Liubov</a>
+    <nav aria-label="Main"><a href="../#work">Work</a><a href="../#about">About</a><a href="../resume.html">Résumé</a><a href="../#contact">Contact</a></nav>
+  </header>
+
+  <div class="case-head">
+    <a class="back" href="../#work">← All work</a>
+    <h1 class="case-title"><span class="bar" aria-hidden="true"></span>Licensing dashboard</h1>
+    <p class="case-sub">One shared place for a four-person office that gets restaurants their liquor licenses, food permits and sidewalk cafe approvals.</p>
+    <dl class="facts">
+      <div><dt>Client</dt><dd>NY Business Licensing</dd></div>
+      <div><dt>Role</dt><dd>Sole engineer</dd></div>
+      <div><dt>Program</dt><dd>Google-funded Hispanic Federation program, 2026</dd></div>
+      <div><dt>Stack</dt><dd>Next.js, TypeScript, Supabase, Playwright, Vercel</dd></div>
+    </dl>
+  </div>
+
+  <div class="case-body">
+    <nav class="toc" aria-label="On this page">
+      <a href="#problem">Problem</a><a href="#built">What I built</a><a href="#ai">Where the AI is</a><a href="#decisions">Decisions</a><a href="#tradeoffs">Tradeoffs</a><a href="#outcome">Outcome</a>
+    </nav>
+    <article class="prose">
+      <h2 id="problem">The problem</h2>
+      <p>A New York liquor license moves through eight stages, from application sent to final license. Along the way it picks up community board notices, fingerprinting, documents, payments, agency follow-ups and deadlines. One client can mean three approvals running at the same time.</p>
+      <p>The team could find any detail if they went looking, but it was spread across spreadsheets, email, Dropbox and memory. Nobody had one view of what needed attention today, who owned it, or what should happen next.</p>
+      <blockquote>“Clients need to feel that everything is organized and under control.”<br><span class="note">The office’s founder</span></blockquote>
+      <p>The goal was to make that true inside the office first.</p>
+
+      <h2 id="built">What I built</h2>
+      <p>Staff sign in and land on a Today view: overdue work, upcoming work and work with no owner. Opening a task shows its owner, deadline and priority, and links to its application. The application page keeps the stage, tasks, documents, payments, mailings and history together.</p>
+      <ul>
+        <li><strong>Data:</strong> Postgres through Supabase for clients, applications, stages, tasks, deadlines, documents, payments and activity history. I cleaned and imported the office’s existing client data before launch.</li>
+        <li><strong>Access:</strong> only approved staff can sign in, access is role-based, and client documents sit in private storage.</li>
+        <li><strong>Quality:</strong> Playwright end-to-end tests on the main flows run in GitHub Actions, and deploys go through Vercel.</li>
+      </ul>
+
+      <h2 id="ai">Where the AI is</h2>
+      <p>One follow-up email, from start to finish:</p>
+      <div class="flow">
+        <div class="step c"><span class="kind">Code</span><span><b>Confirmed stage</b><span class="d">Eight stages with fixed rules for what can come next.</span></span></div>
+        <div class="step c"><span class="kind">Code</span><span><b>Draft from the stage</b><span class="d">The app writes a focused draft for that exact stage.</span></span></div>
+        <div class="step a"><span class="kind">AI</span><span><b>Optional polish</b><span class="d">AI can improve the wording. It can’t change records or send.</span></span></div>
+        <div class="step h"><span class="kind">Person</span><span><b>Review and send</b><span class="d">Staff check the recipient and details, then send it.</span></span></div>
+      </div>
+
+      <h2 id="decisions">Decisions and why</h2>
+      <ul>
+        <li><strong>Model the office’s real process.</strong> Staff think in stages like “fingerprinting” and “conditional approval.” If the software used other words, they’d keep a spreadsheet on the side, and the spreadsheet would win.</li>
+        <li><strong>Put ownership on each task.</strong> This came out of talking to the team and changed the data model. On one application, different people handle the community board, the fingerprints and the payment. Owning the whole application hid that.</li>
+        <li><strong>Keep the workflow deterministic.</strong> Stages drive deadlines, and deadlines drive the day. That part has to behave the same way every time and be easy to explain, so it’s ordinary code.</li>
+        <li><strong>Give AI one small job.</strong> A clear, polite agency follow-up takes real time to write, and a bad draft costs nothing because a person reads it first.</li>
+        <li><strong>One backend for data, auth and files.</strong> As the only engineer, fewer moving parts meant more time on the product. Postgres underneath means the data isn’t trapped.</li>
+      </ul>
+
+      <h2 id="tradeoffs">Tradeoffs I accepted</h2>
+      <ul>
+        <li>AI could read incoming agency emails and move applications forward on its own. I didn’t do that, because a wrong stage quietly shifts every deadline after it. Staff still update stages by hand.</li>
+        <li>Supabase for auth and storage ties the app to one vendor more than separate services would. I took that for speed.</li>
+        <li>The app fits this office closely. I didn’t make it configurable for other offices that don’t exist yet.</li>
+      </ul>
+
+      <h2 id="outcome">Outcome</h2>
+      <p>The office has one place to see what needs attention, understand an application and take the next step. I presented it at Google HQ, and it’s in rollout now. I’m training the team and changing things based on where they get stuck, and we expect it to save 5 to 10 hours a week once fully adopted.</p>
+      <p class="note">Client data is private, so there’s no public demo. I’m happy to walk through it live.</p>
+    </article>
+  </div>
+
+  <div class="next"><a href="fourth.html"><small>Next project</small><strong>Fourth →</strong></a></div>
+  <footer><span>Liubov · New York</span><a href="../#contact">Get in touch</a></footer>
+</div>
+<script src="../main.js"></script>
+</body>
+</html>

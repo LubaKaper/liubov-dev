@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fourth | Liubov</title>
+<meta name="description" content="Case study: Fourth, a research and outreach agent for maternal health software companies.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800;900&family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="page-case">
+<div class="dot" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <a class="home" href="../">Liubov</a>
+    <nav aria-label="Main"><a href="../#work">Work</a><a href="../#about">About</a><a href="../resume.html">Résumé</a><a href="../#contact">Contact</a></nav>
+  </header>
+
+  <div class="case-head">
+    <a class="back" href="../#work">← All work</a>
+    <h1 class="case-title"><span class="bar" aria-hidden="true"></span>Fourth</h1>
+    <p class="case-sub">A daily research agent that finds hospitals whose postpartum care doesn’t match their public promises, and drafts outreach for the companies that can help.</p>
+    <dl class="facts">
+      <div><dt>Type</dt><dd>Solo build</dd></div>
+      <div><dt>Role</dt><dd>Everything</dd></div>
+      <div><dt>When</dt><dd>2026</dd></div>
+      <div><dt>Stack</dt><dd>Python, public CMS data, LLMs, 196 tests</dd></div>
+    </dl>
+  </div>
+
+  <div class="case-body">
+    <nav class="toc" aria-label="On this page">
+      <a href="#problem">Problem</a><a href="#how">How it works</a><a href="#score">The gap score</a><a href="#ai">Where the AI is</a><a href="#safety">Safety</a><a href="#next">What’s next</a>
+    </nav>
+    <article class="prose">
+      <h2 id="problem">The problem</h2>
+      <p>The name comes from the fourth trimester, the months after birth. Hospitals measure maternal success at delivery. What happens after discharge gets far less attention.</p>
+      <p>I noticed this as a mom. At the same hospitals, well-baby visits get completed about 94% of the time, while postpartum visits for mothers sit around 61%. Many of those hospitals have made public commitments to maternal health.</p>
+      <p>Companies like Babyscripts, Maven Clinic and Wildflower Health build software that helps close that gap. Their sales teams need to know which hospitals to talk to, and why now. Fourth finds them.</p>
+
+      <h2 id="how">How it works</h2>
+      <p>Fourth runs daily over New York hospitals as a pipeline of seven tools. Every data source is free and public: CMS hospital quality files, CDC WONDER, KFF, state perinatal quality collaborative rosters, ACOG and AWHONN signatory lists, and hospital press releases.</p>
+      <div class="flow">
+        <div class="step c"><span class="kind">Code</span><span><b>Commitment ingester</b><span class="d">Finds each hospital’s public maternal health commitments.</span></span></div>
+        <div class="step c"><span class="kind">Code</span><span><b>Outcome scorer</b><span class="d">Reads CMS outcome, readmission and patient survey data.</span></span></div>
+        <div class="step c"><span class="kind">Code</span><span><b>Gap calculator</b><span class="d">Scores the gap between promise and outcome, 0 to 100.</span></span></div>
+        <div class="step c"><span class="kind">Code</span><span><b>Urgency ranker</b><span class="d">Adds timing signals so the list says who to call this week.</span></span></div>
+        <div class="step c"><span class="kind">Code</span><span><b>Account selector</b><span class="d">Picks the hospitals worth reaching out to.</span></span></div>
+        <div class="step a"><span class="kind">AI</span><span><b>Outbound generator</b><span class="d">Drafts a personal email from the hospital’s own numbers.</span></span></div>
+        <div class="step h"><span class="kind">Person</span><span><b>Human checkpoint</b><span class="d">A person approves before anything is sent.</span></span></div>
+      </div>
+
+      <h2 id="score">The gap score</h2>
+      <p>The score has three layers, and every point can be traced back to a source:</p>
+      <ul>
+        <li><strong>Commitment strength, up to 25 points.</strong> How public and specific the hospital’s promise is.</li>
+        <li><strong>Outcome gap, up to 50 points.</strong> How far its postpartum results fall short.</li>
+        <li><strong>Urgency, up to 25 points.</strong> Signals that make this a good moment to reach out.</li>
+      </ul>
+      <p>70 and up means act this week. 40 to 69 means keep watching. Under 40 means not ready.</p>
+      <p>Version 2 added a “silent gap” mode for hospitals with poor outcomes and no public commitment. Those skip the first layer, cap at 75, and get a different email that doesn’t mention a promise they never made.</p>
+
+      <h2 id="ai">Where the AI is</h2>
+      <p>Only in the email. Scoring is plain Python you can check by hand, because a sales team needs to trust why a hospital is on the list. The email has three possible angles: the promise versus the data, the clinical cost of missed follow-up, and the money (49 states now reimburse 12 months of postpartum Medicaid). The score decides which angle leads, and the model writes around it.</p>
+
+      <h2 id="safety">Safety before sending</h2>
+      <p>Right now a person approves every email while I tune it. The next phase moves toward automatic sending, so I built the guardrails first: audit logging for every decision, SHA-256 hashing of records, and a dedupe gate so no hospital gets the same email twice. 196 tests cover the pipeline.</p>
+
+      <h2 id="next">What’s next</h2>
+      <p>Two or three pilot users, then a paid pilot. Fourth works for any maternal health software company: they plug in their product and proof points, and the pipeline does the rest. The real asset is the verified, tagged hospital data underneath.</p>
+    </article>
+  </div>
+
+  <div class="next"><a href="alleycorp.html"><small>Next project</small><strong>Relationship intelligence →</strong></a></div>
+  <footer><span>Liubov · New York</span><a href="../#contact">Get in touch</a></footer>
+</div>
+<script src="../main.js"></script>
+</body>
+</html>

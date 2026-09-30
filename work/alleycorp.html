@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Relationship intelligence | Liubov</title>
+<meta name="description" content="Case study: a relationship intelligence platform for AlleyCorp's Deep Tech portfolio.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800;900&family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="page-case">
+<div class="dot" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <a class="home" href="../">Liubov</a>
+    <nav aria-label="Main"><a href="../#work">Work</a><a href="../#about">About</a><a href="../resume.html">Résumé</a><a href="../#contact">Contact</a></nav>
+  </header>
+
+  <div class="case-head">
+    <a class="back" href="../#work">← All work</a>
+    <h1 class="case-title"><span class="bar" aria-hidden="true"></span>Relationship intelligence</h1>
+    <p class="case-sub">How close is a venture firm to each person in its network, and how does it know? Built with AlleyCorp for its Deep Tech portfolio.</p>
+    <dl class="facts">
+      <div><dt>Partner</dt><dd>AlleyCorp</dd></div>
+      <div><dt>My part</dt><dd>Database schema, enrichment, MCP server</dd></div>
+      <div><dt>When</dt><dd>2026, team of 3</dd></div>
+      <div><dt>Stack</dt><dd>Next.js, TypeScript, Python, MCP, LLMs</dd></div>
+    </dl>
+  </div>
+
+  <div class="case-body">
+    <nav class="toc" aria-label="On this page">
+      <a href="#problem">Problem</a><a href="#warmth">Warmth</a><a href="#ai">Where the AI is</a><a href="#mine">My part</a><a href="#outcome">Outcome</a>
+    </nav>
+    <article class="prose">
+      <h2 id="problem">The problem</h2>
+      <p>A venture firm’s network is its most valuable asset, and it mostly lives in people’s heads. When a portfolio company needs an intro, the question is always the same: who do we actually know there, and how well?</p>
+      <p>We worked directly with AlleyCorp’s partners to turn that question into a product.</p>
+
+      <h2 id="warmth">Warmth you can explain</h2>
+      <p>Every relationship gets a tier: Hot, Warm, Stale or Cold. The tier comes from specific signals, and each one can be shown to the person looking at it:</p>
+      <ul>
+        <li>Co-investment history</li>
+        <li>LinkedIn connections</li>
+        <li>Event attendance, pulled from event platforms like Luma and Swoogo</li>
+        <li>Public press</li>
+      </ul>
+      <p>Signals fade over time. Meeting someone at an event two years ago counts for less than co-investing with them last quarter. A partner can always see why a relationship is rated the way it is. That was the point.</p>
+
+      <h2 id="ai">Where the AI is</h2>
+      <div class="flow">
+        <div class="step c"><span class="kind">Code</span><span><b>Signals and decay</b><span class="d">Collected and weighted by rules, faded over time.</span></span></div>
+        <div class="step c"><span class="kind">Code</span><span><b>Warmth tier</b><span class="d">Hot, Warm, Stale or Cold, with the reasons attached.</span></span></div>
+        <div class="step a"><span class="kind">AI</span><span><b>Enrichment</b><span class="d">LLMs and web search fill in investor profiles.</span></span></div>
+        <div class="step a"><span class="kind">AI</span><span><b>Plain-language search</b><span class="d">“Who do we know at climate hardware startups?”</span></span></div>
+        <div class="step h"><span class="kind">Person</span><span><b>The intro</b><span class="d">Partners decide who to reach out to.</span></span></div>
+      </div>
+      <p>The rating itself never comes from a model. AI helps fill in the picture and makes it easy to search, but the answer to “how well do we know them” is always traceable.</p>
+
+      <h2 id="mine">My part</h2>
+      <p>I owned the database schema, the backend enrichment and the MCP server, which lets AI assistants query the relationship data directly. Access is authenticated only, through deep links, with no anonymous access. A daily digest brings the most useful changes to partners without them having to open anything.</p>
+
+      <h2 id="outcome">Outcome</h2>
+      <p>We presented it at Demo Day in June 2026. My biggest lesson: for a tool like this, being able to explain a rating isn’t a nice extra. It’s what makes people willing to trust it.</p>
+    </article>
+  </div>
+
+  <div class="next"><a href="licensing.html"><small>Next project</small><strong>Licensing dashboard →</strong></a></div>
+  <footer><span>Liubov · New York</span><a href="../#contact">Get in touch</a></footer>
+</div>
+<script src="../main.js"></script>
+</body>
+</html>
