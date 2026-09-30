@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Résumé | Liubov</title>
+<meta name="description" content="Résumé of Luba Kaper, software engineer in New York.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800;900&family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+  .cv-head { position: relative; z-index: 2; padding-top: 26px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: end; }
+  .cv-name { font-family: var(--display); font-weight: 900; font-size: clamp(44px, 9vw, 116px); letter-spacing: -.045em; line-height: .9; margin: 0; }
+  .cv-name .bar { display: block; width: 130px; height: 18px; background: var(--red); margin-bottom: 20px; transform: rotate(-3deg); }
+  .cv-role { margin: 16px 0 0; font-size: 19px; font-weight: 500; }
+  .cv-contact { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 15px; }
+  .cv-contact a { text-decoration: none; border-bottom: 2px solid var(--red); }
+  .cv-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  .cv-actions .btn { background: var(--ink); color: var(--paper-2); border-color: var(--ink); }
+  .cv-actions .btn.solid { background: var(--red); border-color: var(--red); color: #fff; }
+  .cv-actions .btn:hover { background: var(--red); border-color: var(--red); color: #fff; }
+
+  .cv { position: relative; z-index: 2; margin-top: 60px; display: grid; gap: 56px; }
+  .cv-sec { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 32px; align-items: start; }
+  .cv-label { position: sticky; top: 24px; font-family: var(--display); font-weight: 800; font-size: 18px; letter-spacing: -.01em; text-transform: uppercase;
+    background: var(--ink); color: var(--paper-2); padding: 12px 16px; transform: rotate(-2deg); justify-self: start; }
+  .cv-sec:nth-child(even) .cv-label { background: var(--red); color: #fff; transform: rotate(1.5deg); }
+  .cv-body { background: var(--paper-2); padding: clamp(20px, 3.5vw, 36px); box-shadow: 10px 10px 0 rgba(20,20,20,.12); display: grid; gap: 26px; }
+  .cv-body > p { margin: 0; font-size: 17.5px; max-width: 70ch; }
+  .job { display: grid; gap: 6px; padding-left: 16px; border-left: 4px solid transparent; transition: border-color .25s, transform .3s cubic-bezier(.2,1.2,.4,1); }
+  .job:hover { border-color: var(--red); transform: translateX(6px); }
+  .job-top { display: flex; justify-content: space-between; align-items: baseline; gap: 6px 16px; flex-wrap: wrap; }
+  .job h3 { margin: 0; font-family: var(--display); font-weight: 800; font-size: 20px; letter-spacing: -.015em; line-height: 1.15; }
+  .job .when { font-weight: 700; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .job .where { font-weight: 600; color: var(--ink-2); font-size: 15px; }
+  .job ul { margin: 6px 0 0; padding-left: 20px; }
+  .job li { margin-bottom: 6px; max-width: 72ch; }
+  .job li::marker { color: var(--red); }
+  .job .more { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; margin-top: 2px; justify-self: start; }
+  .job .more:hover { color: var(--red); }
+  .skills { display: grid; gap: 14px; }
+  .skills div { display: grid; grid-template-columns: 150px 1fr; gap: 12px; }
+  .skills dt { font-weight: 700; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; padding-top: 3px; }
+  .skills dd { margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+  .skills dd span { font-size: 14px; font-weight: 600; padding: 3px 10px; border: 1.5px solid var(--ink); transition: background .2s, color .2s; }
+  .skills dd span:hover { background: var(--ink); color: var(--paper-2); }
+
+  @media (max-width: 820px) {
+    .cv-head { grid-template-columns: 1fr; }
+    .cv-sec { grid-template-columns: 1fr; gap: 16px; }
+    .cv-label { position: static; }
+    .skills div { grid-template-columns: 1fr; gap: 6px; }
+  }
+
+  @media print {
+    @page { size: letter; margin: .45in; }
+    body { background: #fff; font-size: 10pt; line-height: 1.35; }
+    body::before, .dot, .top, .cv-actions, .next, footer, .job .more { display: none !important; }
+    .wrap { padding: 0; max-width: none; }
+    .cv-head { padding: 0; display: block; }
+    .cv-name { font-size: 26pt; } .cv-name .bar { width: 70px; height: 8px; margin-bottom: 8px; }
+    .cv-role { font-size: 11pt; margin-top: 4px; } .cv-contact { font-size: 9.5pt; margin-top: 4px; }
+    .cv-contact a { border: 0; }
+    .cv { margin-top: 14px; gap: 12px; }
+    .cv-sec { grid-template-columns: 1fr; gap: 4px; break-inside: avoid-page; }
+    .cv-label { position: static; transform: none !important; background: none !important; color: #000 !important; padding: 0 0 2px; font-size: 10.5pt; border-bottom: 1.5pt solid #000; justify-self: stretch; }
+    .cv-body { background: none; box-shadow: none; padding: 0; gap: 8px; }
+    .cv-body > p { font-size: 10pt; }
+    .job { padding: 0; border: 0; gap: 1px; break-inside: avoid; }
+    .job h3 { font-size: 10.5pt; } .job .when { font-size: 8.5pt; } .job .where { font-size: 9.5pt; }
+    .job ul { margin-top: 2px; } .job li { margin-bottom: 1px; }
+    .skills { gap: 3px; } .skills div { grid-template-columns: 1.4in 1fr; gap: 6px; }
+    .skills dt { font-size: 8.5pt; padding: 0; } .skills dd { display: block; }
+    .skills dd span { border: 0; padding: 0; font-size: 9.5pt; font-weight: 400; }
+    .skills dd span:not(:last-child)::after { content: ", "; }
+  }
+</style>
+</head>
+<body class="page-case">
+<div class="dot" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <a class="home" href="./">Liubov</a>
+    <nav aria-label="Main"><a href="./#work">Work</a><a href="./#about">About</a><a href="resume.html">Résumé</a><a href="./#contact">Contact</a></nav>
+  </header>
+
+  <div class="cv-head">
+    <div>
+      <h1 class="cv-name"><span class="bar" aria-hidden="true"></span>Luba Kaper</h1>
+      <p class="cv-role">Software engineer · New York</p>
+      <div class="cv-contact">
+        <span>liubovkaper@pursuit.org</span>
+        <a href="https://www.linkedin.com/in/luba-kaper" target="_blank" rel="noopener">linkedin.com/in/luba-kaper</a>
+        <a href="https://github.com/LubaKaper" target="_blank" rel="noopener">github.com/LubaKaper</a>
+      </div>
+    </div>
+    <div class="cv-actions">
+      <a class="btn solid" href="files/luba-kaper-resume.pdf" download>Download PDF</a>
+      <button class="btn" type="button" onclick="window.print()">Print</button>
+    </div>
+  </div>
+
+  <div class="cv">
+    <section class="cv-sec">
+      <h2 class="cv-label">Summary</h2>
+      <div class="cv-body">
+        <p>Software engineer with production experience at Twitter, now building AI-assisted software for small teams doing paperwork-heavy, regulated work. I work directly with the people doing the job, then design, build, test and deploy the system. I use AI where it saves time and keep records and decisions under clear rules and human review.</p>
+      </div>
+    </section>
+
+    <section class="cv-sec">
+      <h2 class="cv-label">Experience</h2>
+      <div class="cv-body">
+        <article class="job">
+          <div class="job-top"><h3>Software Engineer, Freelance</h3><span class="when">Aug 2026 – Present</span></div>
+          <span class="where">NY Business Licensing · New York, NY · Google-funded Hispanic Federation program</span>
+          <ul>
+            <li>Sole engineer on a Next.js, TypeScript and Supabase/PostgreSQL operations platform for a 4-person firm that gets restaurants through New York liquor license, food permit and sidewalk cafe approvals. It replaces spreadsheets, email, Dropbox and memory, and should save the team 5 to 10 hours a week once fully adopted.</li>
+            <li>Modeled the state liquor license process as an 8-stage workflow, from application sent to final license, with fixed rules for stage changes, task links and next steps. This part is plain code, not AI, so it behaves the same way every time.</li>
+            <li>Gave AI one narrow job: improving the wording of follow-up emails based on the application’s confirmed stage. It can’t change records, pick recipients or send anything. Staff review and send every message.</li>
+            <li>Ran discovery with the owner and staff, cleaned and imported years of client data, and reworked the data model when interviews showed ownership belonged on each task, not the whole application. Built role-based access, private document storage, end-to-end tests and automated deploys.</li>
+            <li>Presented it at Google HQ. Now leading the rollout: training staff and fixing what trips them up.</li>
+          </ul>
+          <a class="more" href="work/licensing.html">Case study →</a>
+        </article>
+        <article class="job">
+          <div class="job-top"><h3>iOS Engineer</h3><span class="when">Feb 2021 – Feb 2023</span></div>
+          <span class="where">Twitter, Inc. · New York, NY</span>
+          <ul>
+            <li>Engineer on the Tweet Foundation team, working on the core Tweet infrastructure every feature team in Twitter’s iOS app depended on.</li>
+            <li>Led completion of a major Tweet modularization milestone (legacyStatus), cutting dependencies between several teams so they could ship without waiting on each other.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <div class="job-top"><h3>Culinary Data Associate / Nutritionist</h3><span class="when">Apr 2017 – Apr 2019</span></div>
+          <span class="where">Plated · New York, NY</span>
+          <ul><li>Maintained the recipe and ingredient data behind production systems; managed 50 to 100 SKUs a week.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="cv-sec">
+      <h2 class="cv-label">Projects</h2>
+      <div class="cv-body">
+        <article class="job">
+          <div class="job-top"><h3>Fourth</h3><span class="when">2026</span></div>
+          <span class="where">Solo build · Python, LLMs</span>
+          <ul><li>Pulls CMS hospital quality data, compares each hospital’s maternal health commitments with its postpartum outcomes, scores the gap from 0 to 100 and drafts outreach. Scoring is rule-based and explainable; the LLM only writes the email. Audit logging, duplicate-send check, human approval step, 196 tests.</li></ul>
+          <a class="more" href="work/fourth.html">Case study →</a>
+        </article>
+        <article class="job">
+          <div class="job-top"><h3>AlleyCorp Relationship Intelligence</h3><span class="when">Jun 2026</span></div>
+          <span class="where">Team of 3 · Next.js, TypeScript, Python, MCP</span>
+          <ul><li>Built with AlleyCorp partners to show how close the firm is to people in its Deep Tech network. I owned the database schema, data enrichment and MCP server. Relationship strength comes from specific signals (co-investments, connections, events, press) that fade over time, so every rating can be explained.</li></ul>
+          <a class="more" href="work/alleycorp.html">Case study →</a>
+        </article>
+        <article class="job">
+          <div class="job-top"><h3>Open Source</h3><span class="when">2026</span></div>
+          <span class="where">Python</span>
+          <ul><li>Honcho (Plastic Labs): persistent-memory skill for LLM agents, reviewed and merged to main. Cal.com: ARIA and contrast fixes toward WCAG 2.1 AA.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="cv-sec">
+      <h2 class="cv-label">Skills</h2>
+      <div class="cv-body">
+        <dl class="skills">
+          <div><dt>AI &amp; LLM</dt><dd><span>LLM APIs</span><span>Agent workflows</span><span>Tool calling</span><span>MCP</span><span>RAG</span><span>LLM evaluation</span><span>Human-in-the-loop review</span><span>Claude Code</span><span>Codex</span><span>Cursor</span></dd></div>
+          <div><dt>Languages</dt><dd><span>Python</span><span>TypeScript/JavaScript</span><span>SQL</span><span>Swift</span><span>HTML/CSS</span></dd></div>
+          <div><dt>Tools</dt><dd><span>React</span><span>Next.js</span><span>Node.js</span><span>FastAPI</span><span>Supabase</span><span>PostgreSQL</span><span>Playwright</span><span>GitHub Actions</span><span>Vercel</span><span>Firebase</span><span>Git</span><span>Xcode</span></dd></div>
+          <div><dt>Spoken</dt><dd><span>English (native)</span><span>Russian (native)</span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="cv-sec">
+      <h2 class="cv-label">Education</h2>
+      <div class="cv-body">
+        <article class="job">
+          <div class="job-top"><h3>Pursuit</h3><span class="when">Sep 2025 – Present</span></div>
+          <span class="where">AI-Native Software Engineering Fellowship · Long Island City, NY</span>
+          <ul><li>Led rotating project teams (new team every 2 to 4 weeks): set scope, split work, reviewed code, shipped demos.</li></ul>
+        </article>
+        <article class="job">
+          <div class="job-top"><h3>Pursuit</h3><span class="when">2019 – 2020</span></div>
+          <span class="where">iOS Software Engineering Fellowship · Long Island City, NY</span>
+        </article>
+        <article class="job">
+          <div class="job-top"><h3>Brooklyn College, CUNY</h3><span class="when">2012 – 2016</span></div>
+          <span class="where">B.S. in Nutritional Science · Brooklyn, NY</span>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <div class="next"><a href="./#work"><small>See the work</small><strong>Projects and case studies →</strong></a></div>
+  <footer><span>Liubov · New York</span><a href="./#contact">Get in touch</a></footer>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
