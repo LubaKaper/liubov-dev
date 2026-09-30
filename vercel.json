@@ -1,0 +1,1 @@
+{ "cleanUrls": false, "trailingSlash": false, "redirects": [ { "source": "/resume.pdf", "destination": "/resume.html", "permanent": false } ] }
