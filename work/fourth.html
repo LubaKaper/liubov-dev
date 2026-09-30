@@ -5,6 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Fourth | Liubov</title>
 <meta name="description" content="Case study: Fourth, a research and outreach agent for maternal health software companies.">
+<meta name="author" content="Luba Kaper">
+<meta name="theme-color" content="#DAD7CF">
+<link rel="canonical" href="https://liubov-dev.vercel.app/work/fourth.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Liubov">
+<meta property="og:title" content="Fourth | Luba Kaper">
+<meta property="og:description" content="An explainable research agent that finds the gap between hospitals’ maternal-health promises and postpartum outcomes.">
+<meta property="og:url" content="https://liubov-dev.vercel.app/work/fourth.html">
+<meta property="og:image" content="https://liubov-dev.vercel.app/assets/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Luba Kaper — product-minded software engineer in New York">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fourth | Luba Kaper">
+<meta name="twitter:description" content="Rule-based scoring, public health data, AI-written outreach, and a human checkpoint.">
+<meta name="twitter:image" content="https://liubov-dev.vercel.app/assets/social-card.png">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,11 +45,12 @@
       <div><dt>When</dt><dd>2026</dd></div>
       <div><dt>Stack</dt><dd>Python, public CMS data, LLMs, 196 tests</dd></div>
     </dl>
+    <p class="case-actions"><a class="btn" href="https://github.com/LubaKaper/FOURTH" target="_blank" rel="noopener">View source →</a></p>
   </div>
 
   <div class="case-body">
     <nav class="toc" aria-label="On this page">
-      <a href="#problem">Problem</a><a href="#how">How it works</a><a href="#score">The gap score</a><a href="#ai">Where the AI is</a><a href="#safety">Safety</a><a href="#next">What’s next</a>
+      <a href="#problem">Problem</a><a href="#how">How it works</a><a href="#score">The gap score</a><a href="#ai">Where the AI is</a><a href="#safety">Safety</a><a href="#status">Status</a><a href="#next">What’s next</a>
     </nav>
     <article class="prose">
       <h2 id="problem">The problem</h2>
@@ -55,6 +72,13 @@
 
       <h2 id="score">The gap score</h2>
       <p>The score has three layers, and every point can be traced back to a source:</p>
+      <figure class="case-visual scorecard">
+        <figcaption><span>Explainable by construction</span>Every point has a source and every threshold has a meaning.</figcaption>
+        <div class="score-row"><b>Commitment strength</b><span class="score-track"><span class="score-fill" style="width:50%"></span></span><span class="score-points">/ 25</span></div>
+        <div class="score-row"><b>Outcome gap</b><span class="score-track"><span class="score-fill" style="width:100%"></span></span><span class="score-points">/ 50</span></div>
+        <div class="score-row"><b>Urgency</b><span class="score-track"><span class="score-fill" style="width:50%"></span></span><span class="score-points">/ 25</span></div>
+        <div class="score-key"><span class="act">70+ Act now</span><span>40–69 Watch</span><span>0–39 Not ready</span></div>
+      </figure>
       <ul>
         <li><strong>Commitment strength, up to 25 points.</strong> How public and specific the hospital’s promise is.</li>
         <li><strong>Outcome gap, up to 50 points.</strong> How far its postpartum results fall short.</li>
@@ -68,6 +92,12 @@
 
       <h2 id="safety">Safety before sending</h2>
       <p>Right now a person approves every email while I tune it. The next phase moves toward automatic sending, so I built the guardrails first: audit logging for every decision, SHA-256 hashing of records, and a dedupe gate so no hospital gets the same email twice. 196 tests cover the pipeline.</p>
+
+      <h2 id="status">Current status</h2>
+      <div class="outcome-grid">
+        <div class="outcome-card"><span class="claim">Verified</span><strong>196 automated tests</strong><p>The scoring, audit trail, deduplication and human-approval path are covered today.</p></div>
+        <div class="outcome-card projected"><span class="claim">Next evidence</span><strong>2–3 pilot users</strong><p>Pilot conversion and outreach performance have not been measured yet.</p></div>
+      </div>
 
       <h2 id="next">What’s next</h2>
       <p>Two or three pilot users, then a paid pilot. Fourth works for any maternal health software company: they plug in their product and proof points, and the pipeline does the rest. The real asset is the verified, tagged hospital data underneath.</p>

@@ -5,6 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Résumé | Liubov</title>
 <meta name="description" content="Résumé of Luba Kaper, software engineer in New York.">
+<meta name="author" content="Luba Kaper">
+<meta name="theme-color" content="#DAD7CF">
+<link rel="canonical" href="https://liubov-dev.vercel.app/resume.html">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Liubov">
+<meta property="og:title" content="Résumé | Luba Kaper">
+<meta property="og:description" content="Software engineer with production experience at Twitter, now building reliable AI-assisted products end to end.">
+<meta property="og:url" content="https://liubov-dev.vercel.app/resume.html">
+<meta property="og:image" content="https://liubov-dev.vercel.app/assets/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Luba Kaper — product-minded software engineer in New York">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Résumé | Luba Kaper">
+<meta name="twitter:description" content="Product-minded software engineer in New York.">
+<meta name="twitter:image" content="https://liubov-dev.vercel.app/assets/social-card.png">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,25 +71,25 @@
   }
 
   @media print {
-    @page { size: letter; margin: .45in; }
-    body { background: #fff; font-size: 10pt; line-height: 1.35; }
+    @page { size: letter; margin: .35in; }
+    body { background: #fff; font-size: 9.5pt; line-height: 1.28; zoom: .72; }
     body::before, .dot, .top, .cv-actions, .next, footer, .job .more { display: none !important; }
     .wrap { padding: 0; max-width: none; }
     .cv-head { padding: 0; display: block; }
-    .cv-name { font-size: 26pt; } .cv-name .bar { width: 70px; height: 8px; margin-bottom: 8px; }
-    .cv-role { font-size: 11pt; margin-top: 4px; } .cv-contact { font-size: 9.5pt; margin-top: 4px; }
+    .cv-name { font-size: 25pt; } .cv-name .bar { width: 70px; height: 8px; margin-bottom: 7px; }
+    .cv-role { font-size: 10.5pt; margin-top: 3px; } .cv-contact { font-size: 9pt; margin-top: 3px; }
     .cv-contact a { border: 0; }
-    .cv { margin-top: 14px; gap: 12px; }
-    .cv-sec { grid-template-columns: 1fr; gap: 4px; break-inside: avoid-page; }
-    .cv-label { position: static; transform: none !important; background: none !important; color: #000 !important; padding: 0 0 2px; font-size: 10.5pt; border-bottom: 1.5pt solid #000; justify-self: stretch; }
-    .cv-body { background: none; box-shadow: none; padding: 0; gap: 8px; }
-    .cv-body > p { font-size: 10pt; }
+    .cv { margin-top: 10px; gap: 8px; }
+    .cv-sec { grid-template-columns: 1fr; gap: 3px; break-inside: auto; }
+    .cv-label { position: static; transform: none !important; background: none !important; color: #000 !important; padding: 0 0 1px; font-size: 10pt; border-bottom: 1.5pt solid #000; justify-self: stretch; }
+    .cv-body { background: none; box-shadow: none; padding: 0; gap: 5px; }
+    .cv-body > p { font-size: 9.5pt; }
     .job { padding: 0; border: 0; gap: 1px; break-inside: avoid; }
-    .job h3 { font-size: 10.5pt; } .job .when { font-size: 8.5pt; } .job .where { font-size: 9.5pt; }
-    .job ul { margin-top: 2px; } .job li { margin-bottom: 1px; }
-    .skills { gap: 3px; } .skills div { grid-template-columns: 1.4in 1fr; gap: 6px; }
-    .skills dt { font-size: 8.5pt; padding: 0; } .skills dd { display: block; }
-    .skills dd span { border: 0; padding: 0; font-size: 9.5pt; font-weight: 400; }
+    .job h3 { font-size: 10pt; } .job .when { font-size: 8pt; } .job .where { font-size: 9pt; }
+    .job ul { margin-top: 1px; } .job li { margin-bottom: 0; }
+    .skills { gap: 2px; } .skills div { grid-template-columns: 1.3in 1fr; gap: 5px; }
+    .skills dt { font-size: 8pt; padding: 0; } .skills dd { display: block; }
+    .skills dd span { border: 0; padding: 0; font-size: 9pt; font-weight: 400; }
     .skills dd span:not(:last-child)::after { content: ", "; }
   }
 </style>
@@ -117,7 +133,7 @@
           <div class="job-top"><h3>Software Engineer, Freelance</h3><span class="when">Aug 2026 – Present</span></div>
           <span class="where">NY Business Licensing · New York, NY · Google-funded Hispanic Federation program</span>
           <ul>
-            <li>Sole engineer on a Next.js, TypeScript and Supabase/PostgreSQL operations platform for a 4-person firm that gets restaurants through New York liquor license, food permit and sidewalk cafe approvals. It replaces spreadsheets, email, Dropbox and memory, and should save the team 5 to 10 hours a week once fully adopted.</li>
+            <li>Sole engineer on a Next.js, TypeScript and Supabase/PostgreSQL operations platform for a 4-person firm that gets restaurants through New York liquor license, food permit and sidewalk cafe approvals. It replaces spreadsheets, email, Dropbox and memory; the client projects it will save 5 to 10 hours a week once fully adopted.</li>
             <li>Modeled the state liquor license process as an 8-stage workflow, from application sent to final license, with fixed rules for stage changes, task links and next steps. This part is plain code, not AI, so it behaves the same way every time.</li>
             <li>Gave AI one narrow job: improving the wording of follow-up emails based on the application’s confirmed stage. It can’t change records, pick recipients or send anything. Staff review and send every message.</li>
             <li>Ran discovery with the owner and staff, cleaned and imported years of client data, and reworked the data model when interviews showed ownership belonged on each task, not the whole application. Built role-based access, private document storage, end-to-end tests and automated deploys.</li>
@@ -159,7 +175,9 @@
         <article class="job">
           <div class="job-top"><h3>Open Source</h3><span class="when">2026</span></div>
           <span class="where">Python</span>
-          <ul><li>Honcho (Plastic Labs): persistent-memory skill for LLM agents, reviewed and merged to main. Cal.com: ARIA and contrast fixes toward WCAG 2.1 AA.</li></ul>
+          <ul><li>Honcho (Plastic Labs): persistent-memory skill for LLM agents, reviewed and merged to main. Cal.com: opened a pull request improving booking-calendar ARIA labels and contrast toward WCAG 2.1 AA.</li></ul>
+          <a class="more" href="https://github.com/plastic-labs/honcho/pull/495" target="_blank" rel="noopener">Honcho PR →</a>
+          <a class="more" href="https://github.com/calcom/cal.diy/pull/28776" target="_blank" rel="noopener">Cal.com PR →</a>
         </article>
       </div>
     </section>

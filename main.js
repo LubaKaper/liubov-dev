@@ -5,23 +5,22 @@
   const wedge = document.querySelector('.wedge');
 
   let mx = innerWidth * .78, my = innerHeight * .32, dx = mx, dy = my;
-  addEventListener('pointermove', e => {
-    mx = e.clientX; my = e.clientY;
-    if (wedge) wedge.style.setProperty('--rot', (-24 + (e.clientX / innerWidth) * 20).toFixed(1) + 'deg');
-  }, { passive: true });
+  if (canHover) {
+    addEventListener('pointermove', e => {
+      mx = e.clientX; my = e.clientY;
+      if (wedge) wedge.style.setProperty('--rot', (-24 + (e.clientX / innerWidth) * 20).toFixed(1) + 'deg');
+    }, { passive: true });
+  }
 
   function tick(t) {
-    if (!canHover) {
-      mx = innerWidth * (.6 + .28 * Math.sin(t / 3200));
-      my = innerHeight * (.35 + .22 * Math.cos(t / 4100));
-    }
     dx += (mx - dx) * .07; dy += (my - dy) * .07;
     if (dot) dot.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
     requestAnimationFrame(tick);
   }
   if (dot) {
     if (reduce) dot.style.transform = `translate3d(${innerWidth * .82}px, 200px, 0)`;
-    else requestAnimationFrame(tick);
+    else if (canHover) requestAnimationFrame(tick);
+    else dot.classList.add('auto');
   }
 
   // copy email
