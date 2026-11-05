@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://liubov-dev.vercel.app">
+  <a href="https://liubov.dev">
     <img src="assets/readme-hero.svg" alt="Luba Kaper — software engineer in New York" width="100%">
   </a>
 </p>
@@ -9,11 +9,11 @@
 </p>
 
 <p align="center">
-  <a href="https://liubov-dev.vercel.app">View the portfolio</a>
+  <a href="https://liubov.dev">View the portfolio</a>
   &nbsp;·&nbsp;
-  <a href="https://liubov-dev.vercel.app/#work">Read the case studies</a>
+  <a href="https://liubov.dev/#work">Read the case studies</a>
   &nbsp;·&nbsp;
-  <a href="https://liubov-dev.vercel.app/resume.html">Résumé</a>
+  <a href="https://liubov.dev/resume.html">Résumé</a>
 </p>
 
 ---
@@ -28,9 +28,9 @@ This portfolio is deliberately simple: semantic HTML, hand-written CSS, and a li
 
 | Project | The problem | My contribution |
 | --- | --- | --- |
-| [**Licensing operations dashboard**](https://liubov-dev.vercel.app/work/licensing.html) | A four-person licensing office was coordinating applications, deadlines, documents, and ownership across spreadsheets, email, Dropbox, and memory. | Sole engineer—from discovery and data modeling through implementation, testing, deployment, and rollout. |
-| [**Fourth**](https://liubov-dev.vercel.app/work/fourth.html) | Maternal-health software companies need a reliable way to find hospitals whose postpartum outcomes do not match their public commitments. | Built the research pipeline, explainable scoring, human-reviewed outreach, audit trail, and 196-test suite. |
-| [**Relationship intelligence**](https://liubov-dev.vercel.app/work/alleycorp.html) | AlleyCorp needed to know who in its network could make a warm introduction—and why the relationship was considered warm. | Owned the database schema, enrichment pipeline, and authenticated MCP server on a three-person team. |
+| [**Licensing operations dashboard**](https://liubov.dev/work/licensing.html) | A four-person licensing office was coordinating applications, deadlines, documents, and ownership across spreadsheets, email, Dropbox, and memory. | Sole engineer—from discovery and data modeling through implementation, testing, deployment, and rollout. |
+| [**Fourth**](https://liubov.dev/work/fourth.html) | Maternal-health software companies need a reliable way to find hospitals whose postpartum outcomes do not match their public commitments. | Built the research pipeline, explainable scoring, human-reviewed outreach, audit trail, and 196-test suite. |
+| [**Relationship intelligence**](https://liubov.dev/work/alleycorp.html) | AlleyCorp needed to know who in its network could make a warm introduction—and why the relationship was considered warm. | Owned the database schema, enrichment pipeline, and authenticated MCP server on a three-person team. |
 | [**Bar break-even calculator**](https://lubakaper.github.io/BarBreakdownColculator/) | A Brooklyn bar owner needed to see how pricing, costs, and weekly sales patterns change the break-even point. | Built a privacy-friendly browser tool where all numbers stay on the device. |
 
 ## How I build
